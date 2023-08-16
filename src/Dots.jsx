@@ -65,7 +65,7 @@ const Dots = () => {
   };
   return (
     <div>
-      <div className=" bg-orange-400 text-white fixed top-4 right-4 w-fit p-2 z-50">
+      <div className=" bg-orange-400 text-white fixed top-4 right-4 w-fit p-2 z-50 rounded-md">
         <p>Info : {count}</p>
         <div>
           <p>Select dot color</p>

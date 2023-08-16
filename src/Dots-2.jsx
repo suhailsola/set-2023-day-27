@@ -6,7 +6,7 @@ const Dots = () => {
   const [positions, setPositions] = useState([]);
   const [isPainting, setIsPainting] = useState(false);
   const [count, setCount] = useState(0);
-  const [penSize, setPenSize] = useState(20);
+  const [penSize, setPenSize] = useState(40);
 
   const handleMouseDown = (e) => {
     setIsPainting(true);
@@ -46,19 +46,29 @@ const Dots = () => {
     setPenSize(parseInt(e.target.value, 10));
   };
 
+  const eraser = (e) => {
+    console.log(e);
+  };
   return (
     <div>
-      <div className=" bg-orange-400 text-white fixed top-4 right-4 w-fit p-2 z-50">
-        <p>Info : {count}</p>
-        <div>
-          <p>Select dot color</p>
+      <div className=" bg-blue-700 text-black fixed top-4 right-4 w-fit p-2 z-50 rounded-md">
+        <p>Controller</p>
+        <p>Dot count : {count}</p>
+        <div className="flex flex-col gap-1">
+          <p>Select pen color</p>
           <input type="color" onChange={(event) => handleChangeColor(event)} />
+          <label>Pensize</label>
           <input
             type="range"
             onChange={(event) => handlePenSize(event)}
             name="pen-size"
             min="10"
             max="40"
+          />
+          <input
+            type="checkbox"
+            name="eraser"
+            onChange={(event) => eraser(event)}
           />
         </div>
       </div>
